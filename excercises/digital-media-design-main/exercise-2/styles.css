@@ -1,6 +1,6 @@
 body{
     /* background-color: black; */
-    color: black;
+    color: #D0D1C4;
     margin: 0;
 }
 
@@ -12,7 +12,6 @@ body{
 }
 
  .offer{
-    border: black 1px solid;
     position: absolute;
     width: 400px;
     height: 400px;

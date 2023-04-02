@@ -19,13 +19,14 @@ function setup() {
   function draw() {
 
     if (mode = 1){
-      displayCat()
-    }
+      displayCat();
+    
 
-    removeElements();
+    // removeElements(); 
     //lets manipulate the DOM and make our cat move with the arrow keys
     //create an image element in html
-   let cat = createImg("images/cat.png");
+   let cat = createImg("images/Star 1.png");
+   
     //select size of image
     cat.size(200,200);
      // give it an id
@@ -39,7 +40,7 @@ function setup() {
   
     //position the cat based on the arrow keys
   cat.position(xpos, ypos);
-
+    }
 
   //controls using arrow keys
     if (keyIsPressed){
@@ -98,10 +99,10 @@ function setup() {
   }
 
   function displayCat(){
-    removeElements();
+    // removeElements();
     //lets manipulate the DOM and make our cat move with the arrow keys
     //create an image element in html
-   let cat = createImg("images/cat.png");
+   let cat = createImg("images/Star 2.png");
     //select size of image
     cat.size(200,200);
      // give it an id
