@@ -1,14 +1,14 @@
-//p5 sound library https://p5js.org/reference/#/libraries/p5.sound
+// p5 sound library https://p5js.org/reference/#/libraries/p5.sound
 
 let violet, iris, jasmine;
 
-//declare variable up at the top
+// //declare variable up at the top
 let mySound1, mySound2, mySound3;
 
-var dragging = false; // Is the object being dragged?
+// var dragging = false; // Is the object being dragged?
 
 
-//load sounds before you use them
+// //load sounds before you use them
 function preload(){
 
   soundFormats('mp3', 'ogg');
@@ -24,7 +24,7 @@ function setup() {
     cnv.parent('mySketch');
 
     //play sound when mouse is pressed on the canvas
-    //cnv.mousePressed(toggleSound);
+    // cnv.mousePressed(toggleSound);
 
     violet = createImg("images/violet.png");
     violet.class('flower');
@@ -47,6 +47,8 @@ function setup() {
     jasmine.mousePressed(makeJasmine);
   }
 
+
+//if its plaing it will pause it when clicked and if its not it will start, pause and stop are different
   function makeViolet() {
     if (mySound1.isPlaying()){
       mySound1.pause();
@@ -71,6 +73,7 @@ function setup() {
       mySound3.play();
     }
   }
+  
 
   
   function windowResized() {
