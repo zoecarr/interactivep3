@@ -122,25 +122,58 @@
 
 
 //RANDOMIZING FILL COLOR
-let rectXY = []; // start with empty list
- function setup() {
- createCanvas(400, 400);
-}
+// let rectXY = []; // start with empty list
+//  function setup() {
+//  createCanvas(400, 400);
+// }
 
-function draw() {
- background(50);
- noStroke();
- rectMode(CENTER);
- fill(255);
- for (let i = 0; i < rectXY.length; i++) {
- fill(rectXY[i][2]);
- rect(rectXY[i][0], rectXY[i][1], 50, 25);
- rectXY[i][1] += 1;
- }
-}
-function mousePressed() {
- rectXY.push([mouseX, mouseY, random(255)]);
+// function draw() {
+//  background(50);
+//  noStroke();
+//  rectMode(CENTER);
+//  fill(255);
+//  for (let i = 0; i < rectXY.length; i++) {
+//  fill(rectXY[i][2]);
+//  rect(rectXY[i][0], rectXY[i][1], 50, 25);
+//  rectXY[i][1] += 1;
+//  }
+// }
+// function mousePressed() {
+//  rectXY.push([mouseX, mouseY, random(255)]);
 
-}
+// }
 
 //
+let rectObjs = [];
+let fillColor;
+// let weightSum = 0
+
+function setup(){
+  createCanvas(400,400);
+
+}
+
+// for (let i=0; i < re,length; i++){
+//   weightSum += kitties[i].weight;
+
+// }
+
+// console.log (weightSum);
+
+function draw(){
+  background(50);
+  noStroke();
+  rectMode(CENTER);
+  fill(255);
+
+  for(let i=0; i<rectObjs.length; i++){
+  fill(rectObjs[i],fillColor);
+  rect(rectObjs[i].xpos, rectObjs[i].ypos, 50, 20)
+  rectObjs[i].ypos +=1;
+}
+}
+
+function mousePressed(){
+  rectObjs.push( {xpos: mouseX, ypos: mouseY,
+  fillColor: random(255)});
+}
