@@ -49,11 +49,11 @@ function setup() {
 
     shell = createImg("images/shell.png");
     shell.class('item');
-    shell.position(550, 550);
+    shell.position(580, 550);
 
     swirlyshell = createImg("images/swirlyshell.png");
     swirlyshell.class('item');
-    swirlyshell.position(850, 200);
+    swirlyshell.position(890, 190);
     
    starfish = createImg("images/starfish.png");
    starfish.class('item');
@@ -61,7 +61,7 @@ function setup() {
 
     sanddollar = createImg("images/sanddollar.png");
     sanddollar.class('item');
-    sanddollar.position(330, 60);
+    sanddollar.position(330, 20);
     
   }
   
