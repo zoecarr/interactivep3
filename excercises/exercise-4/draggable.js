@@ -10,19 +10,19 @@ class Draggable {
       this.offsetY = 0;
     }
 
-    violet(){
-        violet = createImg("images/violet.png");
-        violet.class('flower');
+    shell(){
+        shell = createImg("images/shell.png");
+     shell.class('item');
     }
 
-    iris(){
-        iris = createImg("images/iris.png");
-        iris.class('flower');
+    spiky(){
+        spiky = createImg("images/spiky.png");
+      this.spiky.class('item');
     }
 
-    jasmine(){
-        jasmine = createImg("images/jasmine.png");
-        jasmine.class('flower');
+    sanddollar(){
+        this.sanddollar= createImg("images/sanddollar.png");
+        sanddollar.class('item');
     }
   
     update() {
