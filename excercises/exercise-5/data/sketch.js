@@ -91,7 +91,7 @@ else if (mood == 'tired'){
   fill('#938B97');  
 }
   noStroke();
-  ellipse(700, 350, 700-changex, 700-changey);
+  ellipse(710, 350, 1600-changex, 1600-changey);
 
 
   
@@ -113,8 +113,8 @@ else if (mood == 'tired'){
   //   spacey += 200;
   // }
 
-    changex += 50;
-    changey += 50;
+    changex += 100;
+    changey += 100;
 }
 
 
