@@ -1,7 +1,9 @@
 body{
     /* background-color: black; */
-    color: white;
+    color: green;
     margin: 0;
+    font-family: monospace;
+    font-size:xx-large;
 }
 
 /* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
@@ -10,3 +12,5 @@ body{
     top: 0;
     left: 0;
 }
+
+
