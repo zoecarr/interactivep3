@@ -127,6 +127,41 @@ function setup() {
       
   }
   
+  
+//Clicking the canvas will loop
+//the audio sample until the user
+//clicks again to stop it
+
+//We will store the p5.MediaElement
+//object in here
+let ele;
+
+//while our audio is playing,
+//this will be set to true
+let sampleIsLooping = false;
+
+function mouseClicked() {
+  //here we test if the mouse is over the
+  //canvas element when it's clicked
+  if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+    background(200);
+
+    if (!sampleIsLooping) {
+      //loop our sound element until we
+      //call ele.stop() on it.
+      'item'.loop();
+
+      sampleIsLooping = true;
+      text('Click to stop!', width / 2, height / 2);
+    } else {
+      'item'.stop();
+
+      sampleIsLooping = false;
+      text('Click to loop!', width / 2, height / 2);
+    }
+  }
+}
+  
 
   
   function windowResized() {

@@ -1,12 +1,25 @@
 body{
-    /* background-color: black; */
-    color: white;
-    margin: 0;
-}
-
-/* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
-#html-body{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+    background-color: #DCD1C6;
+      color: #DCD1C6;
+      margin: 0;
+  }
+  
+  /* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
+  #html-body{
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  
+  
+  /* hover function */
+  .item{
+      transition: all .2s ease-in-out;
+      position: absolute;
+      mix-blend-mode: luminosity;
+  }
+  
+  .item:hover{
+      transform: scale(1.1);
+      mix-blend-mode:multiply;
+  }
