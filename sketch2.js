@@ -3,7 +3,7 @@ let mySound1, mySound2, mySound3, mySound4, mySound5, mySound6;
 
 var shape;
 
-let img;
+var img;
 
 function preload(){
 
@@ -15,7 +15,7 @@ function preload(){
     mySound5 = loadSound('../excercises/exercise-4/audio/soundbowl_Fx3.mp3');
     mySound6 = loadSound('../excercises/exercise-4/audio/soundbowl_v2.mp3');
 
-    shape = loadImage('/images/shapes/A.png');
+    shape = loadImage('../images/shapes/A.png');
     // shape = loadImage(/images/shapes/A.png);
 }
 
@@ -32,8 +32,9 @@ function draw(){
 }
 
 function keyPressed(){
-  if (key === 'a'){
+  
+  if (key === 'a'|| key == 'A'){
     mySound1.play();
-    image(shape,50,50,50,50);
+    shape = loadImage ('../image/shapes/A.png');
   }
 }
