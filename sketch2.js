@@ -1,9 +1,9 @@
 
 let mySound1, mySound2, mySound3, mySound4, mySound5, mySound6;
 
-let shape1;
+var shape;
 
-let image;
+let img;
 
 function preload(){
 
@@ -15,15 +15,16 @@ function preload(){
     mySound5 = loadSound('../excercises/exercise-4/audio/soundbowl_Fx3.mp3');
     mySound6 = loadSound('../excercises/exercise-4/audio/soundbowl_v2.mp3');
 
-    shape1 = createImg('/images/shapes/A.png');
+    shape = loadImage('/images/shapes/A.png');
+    // shape = loadImage(/images/shapes/A.png);
 }
 
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('mySketch2');
 
-  shape1 = createImg("/images/shapes/A.png");
-    shape1.class('shapes');
+  // shape1 = createImg("/images/shapes/A.png");
+  //   shape1.class('shapes');
 }
 
 function draw(){
@@ -33,6 +34,6 @@ function draw(){
 function keyPressed(){
   if (key === 'a'){
     mySound1.play();
-    shape1(50,50,50,50);
+    image(shape,50,50,50,50);
   }
 }
