@@ -34,7 +34,7 @@ function draw(){
 function keyPressed(){
   
   if (key === 'a'|| key == 'A'){
-    mySound1.play();
+    mySound2.play();
     shape = loadImage ('../image/shapes/A.png');
   }
 }
