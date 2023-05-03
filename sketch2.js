@@ -5,11 +5,7 @@ var shape;
 
 var img;
 
-var x = 1;
-
-let symmetry = 6;   
-
-let angle = 360 / symmetry;
+var x = 0;
 
 
 function preload(){
@@ -42,14 +38,18 @@ function setup() {
   
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('mySketch2');
-  angleMode(DEGREES);
+  blendMode()
   background (bg, 100);
-  blendMode(OVERLAY)
+
+  // blendMode(SCREEN)
 
 }
 
 function draw(){
 
+  if (keyCode == SHIFT && key === 'a'){
+  image(shape, 0, 0, random(100, 400), random(100,400));
+  }
 }
 
 function keyPressed(){
@@ -61,7 +61,7 @@ function keyPressed(){
     blendMode(HARD_LIGHT);
     push();
     translate(random(0, width),random(0, height));
-    image(shape, 0+x, 0+x, random(100, 300), random(100,300));
+    image(shape, 0, 0, random(100, 400), random(100,400));
     pop();
   }
 
@@ -70,7 +70,7 @@ function keyPressed(){
     blendMode(HARD_LIGHT);
     push();
     translate(random(0, width),random(0, height));
-    image(shape, 0, 0, random(100, 300), random(100,300));
+    image(shape, 0, 0, random(100, 400), random(100,400));
     pop();
   }
 
@@ -144,7 +144,9 @@ if (keyCode == SHIFT && key === 'd'|| key == 'D'){
   mySound1.loop();
   blendMode(HARD_LIGHT);
   translate(random(0, width),random(0, height));
-  image(shape6, 0, 0, random(100, 300), random(100,300));
+  image(shape6, 0, 0, random(200, 400), random(200,400));
+  image(shape6, +20, +50, random(200, 400), random(200,400))
+  image(shape6, +100, +100, random(200, 400), random(200,400));
   pop();
 }
 
@@ -152,7 +154,7 @@ if (key === 'd'|| key == 'D'){
   mySound1.play();
   blendMode(HARD_LIGHT)
   translate(random(0, width),random(0, height));
-  image(shape6, 0, 0, random(100, 300), random(100,300));
+  image(shape6, 0, 0, random(200, 400), random(200,400));
   pop();
 }
 
@@ -205,8 +207,6 @@ if (keyCode == SHIFT && key === 'g'|| key == 'G'){
   blendMode(HARD_LIGHT);
   translate(random(0, width),random(0, height));
   image(shape10, 0, 0, random(100, 300), random(100,300));
-   x+= 0.02;
-  rotate(x);
   pop();
 }
 
@@ -215,8 +215,10 @@ if (key === 'g'|| key == 'G'){
   blendMode(HARD_LIGHT)
   translate(random(0, width),random(0, height));
   image(shape10, 0, 0, random(100, 300), random(100,300));
-  x+= 0.2;
-  rotate(x);
   pop();
+}
+
+ if (keyCode == ENTER) {
+  saveCanvas('myCanvas', 'jpg');
 }
 }
