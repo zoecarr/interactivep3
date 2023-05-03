@@ -5,11 +5,12 @@ var shape;
 
 var img;
 
-var x;
+var x = 1;
 
 let symmetry = 6;   
 
 let angle = 360 / symmetry;
+
 
 function preload(){
 
@@ -32,7 +33,7 @@ function preload(){
     shape9 = loadImage('../images/shapes/F.png');
     shape10 = loadImage('../images/shapes/Gm.png');
 
-    bg = loadImage('../images/grainbackground.png')
+    bg = loadImage('../images/background2.png')
     // shape = loadImage(/images/shapes/A.png);
 }
 
@@ -43,152 +44,179 @@ function setup() {
   cnv.parent('mySketch2');
   angleMode(DEGREES);
   background (bg, 100);
-  blendMode(SCREEN)
+  blendMode(OVERLAY)
 
 }
 
 function draw(){
-  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
-    let mx = mouseX - width / 2;
-    let my = mouseY - height / 2;
-    let pmx = pmouseX - width / 2;
-    let pmy = pmouseY - height / 2;
-
-  }
 
 }
 
 function keyPressed(){
-  
+  // let a = random(45);
+  // console.log(a);
   //A
   if (keyCode == SHIFT && key === 'a'|| key == 'A'){
     mySound2.loop();
-    blendMode(MULTIPLY);
-    image(shape, random(0, width), random(0, height));
+    blendMode(HARD_LIGHT);
+    push();
+    translate(random(0, width),random(0, height));
+    image(shape, 0+x, 0+x, random(100, 300), random(100,300));
+    pop();
   }
 
   if (key === 'a'|| key == 'A'){
     mySound2.play();
-    blendMode(MULTIPLY);
-    image(shape, random(0, width), random(0, height));
+    blendMode(HARD_LIGHT);
+    push();
+    translate(random(0, width),random(0, height));
+    image(shape, 0, 0, random(100, 300), random(100,300));
+    pop();
   }
 
 
   //B
   if (keyCode == SHIFT && key === 'b'|| key == 'B'){
     mySound3.loop();
-    blendMode(MULTIPLY);
-    image(shape2, random(0, width), random(0, height));
+    blendMode(HARD_LIGHT);
+    push();
+    translate(random(0, width),random(0, height));
+    image(shape2, 0, 0, random(150, 300), random(150,300));
+    pop();
   }
 
   if (key === 'b'|| key == 'B'){
     mySound3.play();
-    blendMode(MULTIPLY)
-    image(shape2, random(0, width), random(0, height));
+    blendMode(HARD_LIGHT)
+    push();
+    translate(random(0, width),random(0, height));
+    image(shape2, 0, 0, random(150, 300), random(150,300));
+    pop();
 
 }
 
 //B-1
-if (keyCode == SHIFT && key === 'h'|| key == 'H'){
-  mySound4.loop();
-  blendMode(MULTIPLY);
-  image(shape3, random(0, width), random(0, height));
-}
+// if (keyCode == SHIFT && key === 'h'|| key == 'H'){
+//   mySound4.loop();
+//   blendMode(MULTIPLY);
+//   image(shape3, random(0, width), random(0, height));
+// }
 
-if (key === 'h'|| key == 'H'){
-  mySound4.play();
-  blendMode(MULTIPLY)
-  image(shape3, random(0, width), random(0, height));
-}
+// if (key === 'h'|| key == 'H'){
+//   mySound4.play();
+//   blendMode(MULTIPLY)
+//   image(shape3, random(0, width), random(0, height));
+// }
 
 //Bb
-if (keyCode == SHIFT && key === 't'|| key == 'T'){
-  mySound5.loop();
-  blendMode(MULTIPLY);
-  image(shape4, random(0, width), random(0, height));
-}
+// if (keyCode == SHIFT && key === 't'|| key == 'T'){
+//   mySound5.loop();
+//   blendMode(MULTIPLY);
+//   image(shape4, random(0, width), random(0, height));
+// }
 
-if (key === 't'|| key == 'T'){
-  mySound5.play();
-  blendMode(MULTIPLY)
-  image(shape4, random(0, width), random(0, height));
-}
+// if (key === 't'|| key == 'T'){
+//   mySound5.play();
+//   blendMode(MULTIPLY)
+//   image(shape4, random(0, width), random(0, height));
+// }
 
 //C
 if (keyCode == SHIFT && key === 'c'|| key == 'C'){
   mySound6.loop();
-  blendMode(MULTIPLY);
-  image(shape5, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT);
+  push();
+  translate(random(0, width),random(0, height));
+  image(shape5, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 if (key === 'c'|| key == 'C'){
-  mySound6.play();
-  blendMode(MULTIPLY)
-  image(shape5, random(0, width), random(0, height));
+  push();
+  blendMode(HARD_LIGHT);
+  translate(random(0, width),random(0, height));
+  image(shape5, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 //D
 if (keyCode == SHIFT && key === 'd'|| key == 'D'){
   mySound1.loop();
-  blendMode(MULTIPLY);
-  image(shape6, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT);
+  translate(random(0, width),random(0, height));
+  image(shape6, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 if (key === 'd'|| key == 'D'){
   mySound1.play();
-  blendMode(MULTIPLY)
-  image(shape6, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT)
+  translate(random(0, width),random(0, height));
+  image(shape6, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 //drum
 if (keyCode == SHIFT && key === 'k'|| key == 'K'){
   mySound2.loop();
-  blendMode(MULTIPLY);
-  image(shape7, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT);
+  translate(random(0, width),random(0, height));
+  image(shape7, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 if (key === 'k'|| key == 'K'){
   mySound2.play();
-  blendMode(MULTIPLY)
-  image(shape7, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT)
+  translate(random(0, width),random(0, height));
+  image(shape7, 0, 0, random(100, 300), random(100,300));
+  pop();
 }
 
 //E
-if (keyCode == SHIFT && key === 'e'|| key == 'E'){
-  mySound2.loop();
-  blendMode(MULTIPLY);
-  image(shape8, random(0, width), random(0, height));
-}
+// if (keyCode == SHIFT && key === 'e'|| key == 'E'){
+//   mySound2.loop();
+//   blendMode(HARD_LIGHT);
+//   image(shape8, random(0, width), random(0, height));
+// }
 
-if (key === 'e'|| key == 'E'){
-  mySound2.play();
-  blendMode(MULTIPLY)
-  image(shape8, random(0, width), random(0, height));
-}
+// if (key === 'e'|| key == 'E'){
+//   mySound2.play();
+//   blendMode(HARD_LIGHT)
+//   image(shape8, random(0, width), random(0, height));
+// }
 
 //F
-if (keyCode == SHIFT && key === 'f'|| key == 'F'){
-  mySound2.loop();
-  blendMode(MULTIPLY);
-  image(shape9, random(0, width), random(0, height));
-}
+// if (keyCode == SHIFT && key === 'f'|| key == 'F'){
+//   mySound2.loop();
+//   blendMode(HARD_LIGHT);
+//   image(shape9, random(0, width), random(0, height));
+// }
 
-if (key === 'f'|| key == 'F'){
-  mySound2.play();
-  blendMode(MULTIPLY)
-  image(shape9, random(0, width), random(0, height));
-}
+// if (key === 'f'|| key == 'F'){
+//   mySound2.play();
+//   blendMode(HARD_LIGHT)
+//   image(shape9, random(0, width), random(0, height));
+// }
 
 //Gm
 if (keyCode == SHIFT && key === 'g'|| key == 'G'){
   mySound2.loop();
-  blendMode(MULTIPLY);
-  image(shape10, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT);
+  translate(random(0, width),random(0, height));
+  image(shape10, 0, 0, random(100, 300), random(100,300));
+   x+= 0.02;
+  rotate(x);
+  pop();
 }
 
 if (key === 'g'|| key == 'G'){
   mySound2.play();
-  blendMode(MULTIPLY)
-  image(shape10, random(0, width), random(0, height));
+  blendMode(HARD_LIGHT)
+  translate(random(0, width),random(0, height));
+  image(shape10, 0, 0, random(100, 300), random(100,300));
+  x+= 0.2;
+  rotate(x);
+  pop();
 }
 }
