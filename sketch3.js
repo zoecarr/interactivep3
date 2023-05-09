@@ -23,12 +23,12 @@ noStroke();
 osc= new p5.Oscillator();
 env = new p5.Envelope();
 env.setADSR(t1, l1, t2, l2);
-osc.amp(env);
-osc.start();
+
 amp = new p5.Amplitude();
 let vol = amp.getLevel();
 // env.play();
-
+osc.amp(env);
+osc.start();
 // env.play();
 
 
@@ -204,7 +204,7 @@ let y =random(height);
   }
 
   if (key == 'r'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(54));
     fill (86, 125, 52, a);
@@ -212,7 +212,7 @@ let y =random(height);
   }
 
   if (key == 't'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(55));
     fill (6, 128, 199, a);
@@ -220,7 +220,7 @@ let y =random(height);
   }
 
   if (key == 'y'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(57));
     fill (0, 36, 120, a);
@@ -229,7 +229,7 @@ let y =random(height);
   
   
   if (key == 'u'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(59));
     fill (134, 105, 194, a);
@@ -237,7 +237,7 @@ let y =random(height);
   }
 
   if (key == 'i'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(60));
     fill (167, 112, 181, a);
@@ -245,7 +245,7 @@ let y =random(height);
   }
 
   if (key == 'o'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(500);
     osc.freq(midiToFreq(61));
@@ -254,11 +254,15 @@ let y =random(height);
   }
   
   if (key == 'p'){
-    env.play();
+    env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(62));
     fill (240, 22, 65, a);
-    square (x,y, c);
+    square (x,y, width, c);
+  }
+
+  if (keyCode == ENTER) {
+    saveCanvas('myCanvas', 'jpg');
   }
   }
 
