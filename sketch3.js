@@ -234,7 +234,7 @@ let y =random(height);
     osc.setType('square');
     osc.freq(midiToFreq(59));
     fill (134, 105, 194, a);
-    square (x,y, c);
+    rect(x,y,c);
   }
 
   if (key == 'i'){
@@ -262,9 +262,18 @@ let y =random(height);
     square (x,y, c);
   }
 
+  if (key == 'a'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(50));
+    fill (235, 64, 52, a);
+    rect (x,y, x, y);
+  }
+
   if (keyCode == ENTER) {
     saveCanvas('myCanvas', 'jpg');
   }
+  
   }
 
 // function mousePressed(){
