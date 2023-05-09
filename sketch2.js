@@ -1,5 +1,5 @@
 
-let mySound1, mySound2, mySound3, mySound4, mySound5, mySound6;
+let mySound1, mySound2, mySound3, mySound4, mySound5, mySound6, mySound7;
 
 var shape;
 
@@ -7,16 +7,21 @@ var img;
 
 var x = 0;
 
+let sampleIsLooping = false;
+
+let amp;
+
 
 function preload(){
 
   soundFormats('mp3', 'ogg');
-    mySound1 = loadSound('../excercises/exercise-4/audio/Plantasia.mp3');
+    mySound1 = loadSound('../excercises/exercise-4/audio/bass123.mp3');
     mySound2 = loadSound('../excercises/exercise-4/audio/soundbowl_F.mp3');
     mySound3 = loadSound('../excercises/exercise-4/audio/soundbowl1.mp3');
     mySound4 = loadSound('../excercises/exercise-4/audio/soundbowl_inG.mp3');
     mySound5 = loadSound('../excercises/exercise-4/audio/soundbowl_Fx3.mp3');
     mySound6 = loadSound('../excercises/exercise-4/audio/soundbowl_v2.mp3');
+    mySound7 =  loadSound('../excercises/exercise-4/audio/hihatbass123.mp3');
 
     shape = loadImage('../images/shapes/A.png');
     shape2 = loadImage('../images/shapes/B.png');
@@ -38,21 +43,28 @@ function setup() {
   
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('mySketch2');
-  blendMode()
+  // blendMode(SCREEN)
   background (bg, 100);
 
+  amp = new p5.Amplitude()
+
+
+
   // blendMode(SCREEN)
+
+  mySound1.loop();
 
 }
 
 function draw(){
-
-  if (keyCode == SHIFT && key === 'a'){
-  image(shape, 0, 0, random(100, 400), random(100,400));
-  }
-}
-
-function keyPressed(){
+  let vol = amp.getLevel();
+  let c = map(mySound1.currentTime(), 0, mySound1.duration(), 0, width);
+  ellipse (c, 400+(vol*2000), 300)
+  
+if (keyIsPressed){
+  
+  
+  // let c = map(mySound2.currentTime(), 0, mySound2.duration(), 0, width);
   // let a = random(45);
   // console.log(a);
   //A
@@ -60,18 +72,26 @@ function keyPressed(){
     mySound2.loop();
     blendMode(HARD_LIGHT);
     push();
-    translate(random(0, width),random(0, height));
+    translate(random(0, width),random(0, height), );
     image(shape, 0, 0, random(100, 400), random(100,400));
     pop();
+    
+
+    if (!sampleIsLooping) {
+      mySound2.loop();
+      sampleIsLooping = true;
+    } else {
+      mySound2.stop();
+      sampleIsLooping = false;
   }
+}
 
   if (key === 'a'|| key == 'A'){
     mySound2.play();
     blendMode(HARD_LIGHT);
-    push();
-    translate(random(0, width),random(0, height));
-    image(shape, 0, 0, random(100, 400), random(100,400));
-    pop();
+    // translate(random(0, width),random(0, height));
+    // image(shape, c, 0, 100+(vol*1000), 100+(vol*1000));
+    ellipse (c, 100+(vol*1000), 200)
   }
 
 
@@ -83,6 +103,14 @@ function keyPressed(){
     translate(random(0, width),random(0, height));
     image(shape2, 0, 0, random(150, 300), random(150,300));
     pop();
+
+  //   if (!sampleIsLooping) {
+  //     mySound3.loop();
+  //     sampleIsLooping = true;
+  //   } else {
+  //     mySound3.stop();
+  //     sampleIsLooping = false;
+  // }
   }
 
   if (key === 'b'|| key == 'B'){
@@ -160,7 +188,7 @@ if (key === 'd'|| key == 'D'){
 
 //drum
 if (keyCode == SHIFT && key === 'k'|| key == 'K'){
-  mySound2.loop();
+  mySound7.loop();
   blendMode(HARD_LIGHT);
   translate(random(0, width),random(0, height));
   image(shape7, 0, 0, random(100, 300), random(100,300));
@@ -168,7 +196,7 @@ if (keyCode == SHIFT && key === 'k'|| key == 'K'){
 }
 
 if (key === 'k'|| key == 'K'){
-  mySound2.play();
+  mySound7.play();
   blendMode(HARD_LIGHT)
   translate(random(0, width),random(0, height));
   image(shape7, 0, 0, random(100, 300), random(100,300));
@@ -221,4 +249,6 @@ if (key === 'g'|| key == 'G'){
  if (keyCode == ENTER) {
   saveCanvas('myCanvas', 'jpg');
 }
+}
+
 }
