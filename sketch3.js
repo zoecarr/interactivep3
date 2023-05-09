@@ -1,4 +1,4 @@
-let osc, osctri, oscsq, oscsaw, oscsine, env;
+let osc, env;
 let amp;
 let freq, pitch;
 let fft;
@@ -10,11 +10,15 @@ let l2 = 0.1; // decay level  0.0 to 1.0
 
 // let symmetry = 6;   
 
-// let angle = 360 / symmetry;
+// let angle = -0
 
 function setup() {
 let cnv = createCanvas(windowWidth, windowHeight);
 cnv.parent('mySketch2');
+// push();
+// translate(width /2, windowHeight/2);
+// cnv.rotate(angle);
+// pop();
 angleMode(DEGREES);
 background(300);
 blendMode(HARD_LIGHT);
@@ -270,10 +274,161 @@ let y =random(height);
     rect (x,y, x, y);
   }
 
-  if (keyCode == ENTER) {
-    saveCanvas('myCanvas', 'jpg');
+  if (key == 's'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(51));
+    fill (237, 134, 7, a);
+    rect (x,y, x,y);
+  }
+  if (key == 'd'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(52));
+    fill (252, 238, 81, a);
+    rect (x,y, x,y);
+  }
+
+  if (key == 'f'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(54));
+    fill (86, 125, 52, a);
+    rect (x,y, x,y);
+  }
+
+  if (key == 'g'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(55));
+    fill (6, 128, 199, a); 
+    rect (x,y, x,y);
+
+  }
+
+  if (key == 'h'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(57));
+    fill (0, 36, 120, a);
+    rect (x,y, x,y);
   }
   
+  
+  if (key == 'j'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(59));
+    fill (134, 105, 194, a);
+    rect (x,y, x,y);
+  }
+
+  if (key == 'k'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(60));
+    fill (167, 112, 181, a);
+    rect (x,y, x,y);
+  }
+
+  if (key == 'l'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(500);
+    osc.freq(midiToFreq(61));
+    fill (240, 77, 210, a);
+    rect (x,y, x,y);
+  }
+  
+  if (key == ';'){
+    env.play(osc);
+    osc.setType('sawtooth');
+    osc.freq(midiToFreq(62));
+    fill (240, 22, 65, a);
+    rect (x,y, x,y);
+  }
+
+  if (key == 'z'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(50));
+    fill (240, 22, 65, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+  }
+
+  if (key == 'x'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(51));
+    fill (237, 134, 7, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+  }
+  if (key == 'c'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(52));
+    fill (252, 238, 81, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+  }
+
+  if (key == 'v'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(54));
+    fill (86, 125, 52, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+  }
+
+  if (key == 'b'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(55));
+    fill (6, 128, 199, a); 
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+
+  }
+
+  if (key == 'n'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(57));
+    fill (0, 36, 120, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);
+  }
+  
+  
+  if (key == 'm'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(59));
+    fill (134, 105, 194, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);  }
+
+  if (key == ','){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(60));
+    fill (167, 112, 181, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);  }
+
+  if (key == '.'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(500);
+    osc.freq(midiToFreq(61));
+    fill (240, 77, 210, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);  }
+  
+  if (key == '/'){
+    env.play(osc);
+    osc.setType('triangle');
+    osc.freq(midiToFreq(62));
+    fill (240, 22, 65, a);
+    triangle(x,y,x+c,y-c, x-c, y-c,);  }
+ 
+   if (keyCode == ENTER) {
+    saveCanvas('myCanvas', 'jpg');
+  }
   }
 
 // function mousePressed(){
