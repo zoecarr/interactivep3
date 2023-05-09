@@ -87,6 +87,7 @@ osc.freq(midiToFreq(freq));
 
 function keyPressed(){
 
+  
   let a = 200
 
 let c = map(mouseX, 0, width, 0, 360);
@@ -258,7 +259,7 @@ let y =random(height);
     osc.setType('square');
     osc.freq(midiToFreq(62));
     fill (240, 22, 65, a);
-    square (x,y, width, c);
+    square (x,y, c);
   }
 
   if (keyCode == ENTER) {
