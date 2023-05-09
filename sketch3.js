@@ -92,7 +92,7 @@ osc.freq(midiToFreq(freq));
 function keyPressed(){
 
   
-  let a = 200
+  let a = 240
 
 let c = map(mouseX, 0, width, 0, 360);
 let b = map(mouseY, 0, width, 0, 360);
@@ -135,7 +135,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('sine');
     osc.freq(midiToFreq(54));
-    fill (86, 125, 52, a);
+    fill (50, 125, 52, a);
     ellipse (x,y, c);
   }
 
@@ -143,7 +143,7 @@ let y =random(height);
     env.play();
     osc.setType('sine');
     osc.freq(midiToFreq(55));
-    fill (6, 128, 199, a);
+    fill (33, 105, 207, a); 
     ellipse (x,y, c);
   }
 
@@ -212,7 +212,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(54));
-    fill (86, 125, 52, a);
+    fill (50, 125, 52, a);
     square (x,y, c);
   }
 
@@ -220,7 +220,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('square');
     osc.freq(midiToFreq(55));
-    fill (6, 128, 199, a);
+    fill (33, 105, 207, a); 
     square (x,y, c);
   }
 
@@ -293,7 +293,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('sawtooth');
     osc.freq(midiToFreq(54));
-    fill (86, 125, 52, a);
+    fill (50, 125, 52, a);
     rect (x,y, x,y);
   }
 
@@ -301,7 +301,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('sawtooth');
     osc.freq(midiToFreq(55));
-    fill (6, 128, 199, a); 
+    fill (33, 105, 207, a); 
     rect (x,y, x,y);
 
   }
@@ -375,7 +375,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('triangle');
     osc.freq(midiToFreq(54));
-    fill (86, 125, 52, a);
+    fill (50, 125, 52, a);
     triangle(x,y,x+c,y-c, x-c, y-c,);
   }
 
@@ -383,7 +383,7 @@ let y =random(height);
     env.play(osc);
     osc.setType('triangle');
     osc.freq(midiToFreq(55));
-    fill (6, 128, 199, a); 
+    fill (33, 105, 207, a); 
     triangle(x,y,x+c,y-c, x-c, y-c,);
 
   }
