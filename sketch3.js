@@ -33,6 +33,7 @@ let vol = amp.getLevel();
 // env.play();
 osc.amp(env);
 osc.start();
+env.play(osc);
 // env.play();
 
 
