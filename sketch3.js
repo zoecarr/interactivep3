@@ -4,9 +4,9 @@ let freq, pitch;
 let fft;
 
 let t1 = 0.1; // attack time in seconds
-let l1 = 0.7; // attack level 0.0 to 1.0
+let l1 = 0.8; // attack level 0.0 to 1.0
 let t2 = 0.3; // decay time in seconds
-let l2 = 0.1; // decay level  0.0 to 1.0
+let l2 = 0.3; // decay level  0.0 to 1.0
 
 // let symmetry = 6;   
 
