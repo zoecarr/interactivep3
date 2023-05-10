@@ -103,7 +103,7 @@ let b = map(mouseY, 0, width, 0, 360);
 // let volume = map(mouseY, 0, height, 1, 0);
 // osc.freq(pitch);
 // osc.amp(volume);
-// osc.start();
+osc.start();
 env.play(osc);
 
 let x = random(width);
