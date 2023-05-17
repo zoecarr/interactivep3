@@ -408,7 +408,7 @@ let y =random(height);
   if (key == ','){
     env.play(osc);
     osc.setType('triangle');
-    osc.freq(midiToFreq(60));
+    osc.freq(midiToFreq(59));
     fill (167, 112, 181, a);
     triangle(x,y,x+c,y-c, x-c, y-c,);  }
 
@@ -423,7 +423,7 @@ let y =random(height);
   if (key == '/'){
     env.play(osc);
     osc.setType('triangle');
-    osc.freq(midiToFreq(62));
+    osc.freq(midiToFreq(63));
     fill (240, 22, 65, a);
     triangle(x,y,x+c,y-c, x-c, y-c,);  }
  
@@ -431,6 +431,14 @@ let y =random(height);
     saveCanvas('myCanvas', 'jpg');
   }
   }
+
+
+  //CITATION: Mister Baum Music on Youtube
+//Mister Bomb
+
+//YouTube
+//https://www.youtube.com › channel
+  //CITATION: 
 
 // function mousePressed(){
 // if (env.isPlaying){
